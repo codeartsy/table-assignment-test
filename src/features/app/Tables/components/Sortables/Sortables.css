@@ -1,0 +1,20 @@
+.sorting-style div {
+  display: flex;
+}
+
+.sorting-style svg {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.sorting-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 8px;
+  padding: 0 8px;
+  border-radius: 50%;
+  background: rgb(222, 218, 250);
+}
+

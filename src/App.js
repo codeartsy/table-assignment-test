@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Home from 'features/Home';
+import MobileHome from 'features/MobileHome';
+import AppSettings from 'features/AppSettings';
+import { detectMobile } from 'features/app/utils';
 
 function App() {
+
+  const isMobile = detectMobile();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      { isMobile ? <Routes>
+          <Route path="/" element={ <MobileHome /> } exact />
+        </Routes> :
+        <Routes>
+          <Route path="/" element={ <Home /> } exact />
+          <Route path="/appsettings" element={ <AppSettings /> } />
+        </Routes>
+       }
+    </> 
   );
 }
 

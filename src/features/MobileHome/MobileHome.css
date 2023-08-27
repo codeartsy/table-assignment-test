@@ -1,0 +1,169 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+}
+
+.filter-container {
+  display: flex;
+  width: calc(20% - 16px);
+  padding: 16px;
+  min-height: 416px;
+  margin-right: 16px;
+  border-radius: 16px;
+  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.12);
+}
+
+.filter-container p {
+  color: var(--neutral-n-70222222, #222);
+  font-family: 'Avenir Book';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px; 
+}
+
+.table-container {
+  display: flex;
+  width: 80%;
+  height: auto;
+  min-height: 416px;
+}
+
+.table-wrapper {
+  display: flex;
+  width: 100%;
+  height: auto;
+  min-height: 416px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.12);
+}
+
+.table-wrapper table td {
+  padding: 24px 0;
+  color: #000;
+  font-family: 'Avenir Book';
+  font-size: 20px;
+  font-style: normal;
+  line-height: 32px;
+}
+
+.table-wrapper table td {
+  border-bottom: solid 1px #F7F7F7;
+}
+
+.table-wrapper table thead, th{
+  background-color: #F7F7F7;
+  text-transform: capitalize;
+  padding: 24px 0;
+  color: #000;
+  font-family: 'Avenir Heavy';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.table-wrapper table thead th:first-child {
+  border-top-left-radius: 16px;
+  padding-left: 24px;
+}
+
+.table-wrapper table tr td:first-child {
+  padding-left: 24px;
+}
+  
+.table-wrapper table tr td:last-child {
+  padding-right: 24px;
+}
+
+@media (max-width: 1000px){
+  .main-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+  }
+  
+  .filter-container {
+    display: flex;
+    width: 35%;
+    height: 250px;
+  }
+  
+  .filter-container p {
+    color: var(--neutral-n-70222222, #222);
+    /* Desktop/05 Bold body */
+    font-family: 'Avenir Book';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 35px; /* 175% */
+  }
+  
+  .table-container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    min-height: 416px;
+  }
+  
+  .table-wrapper {
+    display: flex;
+    width: 90%;
+    height: auto;
+    min-height: 416px;
+    flex-shrink: 0;
+  }
+
+  .table-wrapper table tbody {
+    padding: 0 16px;
+  }
+  
+  .table-wrapper table td {
+    padding: 8px 0 8px 16px;
+    color: #000;
+    font-family: 'Avenir Book';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 24px;
+    letter-spacing: 0.028px;
+  }
+  
+  .table-wrapper table tr, td {
+    border-bottom: solid 1px #F7F7F7;
+  }
+  
+  .table-wrapper table thead, th{
+    background-color: #F7F7F7;
+    text-transform: capitalize;
+    padding: 8px 0 8px 16px;
+    color: #000;
+    font-family: 'Avenir Heavy';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.028px;
+  }
+  
+  .table-wrapper table thead th:first-child {
+    border-top-left-radius: 8px;
+  }
+    
+  .table-wrapper table thead th:last-child {
+    border-top-right-radius: 8px;
+  }
+
+  .table-wrapper table tr td:first-child {
+    padding-left: 16px;
+  }
+    
+  .table-wrapper table tr td:last-child {
+    padding-right: 16px;
+  }
+  
+}

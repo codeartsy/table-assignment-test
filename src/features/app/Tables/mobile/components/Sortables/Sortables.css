@@ -1,0 +1,9 @@
+.sorting-style div {
+  display: flex;
+}
+
+.sorting-style svg {
+  width: 20px;
+  cursor: pointer;
+}
+
