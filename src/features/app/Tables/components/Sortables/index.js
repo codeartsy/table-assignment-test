@@ -17,8 +17,8 @@ const Sortables = ()=>{
     return sortConfig.key === name ? sortConfig.direction : undefined;
   };
 
-  const tableHead = Object.keys(BasicJson[0]).map(title=>{
-    return <th align='left' className="sorting-style">
+  const tableHead = Object.keys(BasicJson[0]).map((title, index)=>{
+    return <th align='left' key={title+index} className="sorting-style">
       <div
         onClick={() => requestSort(title)}
         className={getClassNamesFor(title)}
@@ -39,10 +39,10 @@ const keyValues = Object.keys(items[0]);
 
  const tableData = items.map((data)=>{
     return(
-      <tr>
+      <tr key={`${Math.random()}`}>
         {
           keyValues.map((v)=>{
-            return <td>{data[v]}</td>
+            return <td key={v}>{data[v]}</td>
           })
         }
       </tr>

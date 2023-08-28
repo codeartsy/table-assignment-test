@@ -36,5 +36,5 @@ export const useSortableData = (items, config = null) => {
 };
 
 export const detectMobile=()=>{
-  return ( window.innerWidth <= 1200 );
+  return ( window.innerWidth <= 1000 );
 }

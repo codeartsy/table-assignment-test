@@ -2,21 +2,21 @@ import React from "react";
 import BasicJson from 'features/mockjson/basic.json'; 
 
 const Basic = ()=>{
-  const tableHead = Object.keys(BasicJson[0]).map(title=>{
-    return <th align='left'>{ title }</th>
+  const tableHead = Object.keys(BasicJson[0]).map((title, index)=>{
+    return <th key={`${title}-${index}`} align='left'>{ title }</th>
   });
 const keyValues = Object.keys(BasicJson[0]);
 
 // get table row data
 
- const tableData = BasicJson.map((data)=>{
+ const tableData = BasicJson.map((data, index)=>{
     return(
-        <tr>
-             {
-                keyValues.map((v)=>{
-                            return <td>{data[v]}</td>
-                })
-             }
+        <tr key={`uni-${index}${Math.random()}}`}>
+          {
+            keyValues.map((v)=>{
+              return <td>{data[v]}</td>
+            })
+          }
         </tr>
     )
   });
