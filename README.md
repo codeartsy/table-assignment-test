@@ -1,70 +1,236 @@
-# Getting Started with Create React App
+# Table Components Technical Document
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Table of Contents
 
-## Available Scripts
+- Introduction
+- Purpose
+- Entry Points
+- Components
+- Basic
+- Sortables
+- RadioTable
+- CheckboxTable
+- Usage
+- Home Component (Desktop)
+- MobileHome Component (Mobile)
+- Props
+- Component Structure
+- Examples
+- Implementing Home (Desktop)
+- Implementing MobileHome (Mobile)
+- Best Practices
+- Reusability
+- Maintainability
 
-In the project directory, you can run:
+# 1. Introduction
 
-### `npm start`
+# Purpose
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- The Table Components library provides a set of components to display tabular data with various functionalities. These components are designed for both desktop and mobile views.
+  Entry Points
+- The library's entry points are the Home component for desktop views and the MobileHome component for mobile views. The MobileHome component is automatically loaded for views less than or equal to 1000px.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# 2. Components
 
-### `npm test`
+# Basic
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- The Basic component renders a basic table for desktop views. It accepts data via props and adjusts columns and rows to accommodate the data.
 
-### `npm run build`
+# Sortables
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- The Sortables component renders a sortable table for desktop views. It populates the table with an array of data and provides sorting functionality for each column.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# RadioTable
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- The RadioTable component renders a table with radio buttons for desktop views. It accepts an array of data as a prop and allows users to select a single row using radio buttons.
 
-### `npm run eject`
+# CheckboxTable
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- The CheckboxTable component renders a table with checkboxes for desktop views. It accepts an array of data as a prop and allows users to manually select multiple rows using checkboxes.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# 3. Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Home Component (Desktop)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- The Home component for desktop views showcases different types of tables using the Basic, Sortables, RadioTable, and CheckboxTable components.
 
-## Learn More
+# MobileHome Component (Mobile)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- The MobileHome component for mobile views displays the Basic, RadioTable, and CheckboxTable components automatically for views less than or equal to 1000px.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# 4. Props
 
-### Code Splitting
+Each component may accept different props to customize their behavior, such as providing data to display in the table.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+** Please Note: Mobile Component will only be loaded if the viewstate has width <=1000px and it will be reflected on page reload due to react-router change of page.**
 
-### Analyzing the Bundle Size
+# Component Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Table Components/
+|-- Home.js
+|-- MobileHome.js
+|-- components/
+| |-- Basic.js
+| |-- Sortables.js
+| |-- RadioTable.js
+| |-- CheckboxTable.js
+|-- mobile/
+| |-- components/
+| |-- Basic.js
+| |-- RadioTable.js
+| |-- CheckboxTable.js
+|-- mockjson/
+| |-- basic.json
+| |-- radio.json
+| |-- checkbox.json
+|-- ...
 
-### Making a Progressive Web App
+# Installation and setup:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- npm install
+- npm start
 
-### Advanced Configuration
+# Unit testing\*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- npm run test [Test covered using jest and enzyme]
 
-### Deployment
+- React Version:
+- React 17.x
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Created via Create React App [**No thirdparty library used**]
 
-### `npm run build` fails to minify
+# Examples
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Implementing Home (Desktop)
+
+# Home.js
+
+import React from 'react';
+import './Home.css';
+import Basic from 'features/app/Tables/components/Basic';
+import Sortables from 'features/app/Tables/components/Sortables';
+import RadioTable from 'features/app/Tables/components/RadioTable';
+import CheckboxTable from 'features/app/Tables/components/CheckboxTable';
+import BasicJson from 'features/mockjson/basic.json';
+import RadioJson from 'features/mockjson/radio.json';
+import CheckboxJson from 'features/mockjson/checkbox.json';
+
+const Home = () => {
+return (
+// ... render each component with appropriate props
+);
+}
+
+export default Home;
+
+````
+
+# Implementing Mobile based table components
+# MobileHome.js
+```import React from 'react';
+import './MobileHome.css';
+import Basic from 'features/app/Tables/mobile/components/Basic';
+import RadioTable from 'features/app/Tables/mobile/components/RadioTable';
+import CheckboxTable from 'features/app/Tables/mobile/components/CheckboxTable';
+import BasicJson from 'features/app/mockjson/basic.json';
+import RadioJson from 'features/app/mockjson/radio.json';
+import CheckboxJson from 'features/app/mockjson/checkbox.json';
+
+const MobileHome = () => {
+  return (
+    <Basic data={BasicJson} /> //Compatible with mobile  or tablet layout
+  );
+}
+
+export default MobileHome;
+````
+
+# Implementing Basic Table
+
+```import React from 'react';
+import BasicTable from './components/Table/BasicTable';
+
+const Home = () => {
+  const data = /* ... */; // Your data here
+
+  return (
+    <div>
+      <h1>Basic Table</h1>
+      <BasicTable data={data} />
+    </div>
+  );
+};
+
+export default Home;
+```
+
+# Implementing Sortable Table Desktop
+
+```import React from 'react';
+import SortableTable from './components/Table/SortableTable';
+
+const Home = () => {
+  const data = /* ... */; // Your data here
+
+  return (
+    <div>
+      <h1>Sortable Table</h1>
+      <SortableTable data={data} />
+    </div>
+  );
+};
+
+export default Home;
+```
+
+# Implementing Checkbox Table Desktop
+
+```import React from 'react';
+import CheckboxTable from './components/Table/CheckboxTable';
+
+const Home = () => {
+  const data = /* ... */; // Your data here
+
+  return (
+    <div>
+      <h1>Checkbox Table</h1>
+      <CheckboxTable data={data} />
+    </div>
+  );
+};
+
+export default Home;
+```
+
+# Implementing Radio Table Desktop
+
+```import React from 'react';
+import RadioTable from './components/Table/RadioTable';
+
+const Home = () => {
+  const data = /* ... */; // Your data here
+
+  return (
+    <div>
+      <h1>Radio Table</h1>
+      <RadioTable data={data} />
+    </div>
+  );
+};
+
+export default Home;
+```
+
+# Best Practices
+
+# Reusability
+
+- Keep components focused on their specific functionalities.
+- Utilize components' reusability by passing appropriate props.
+
+# Maintainability
+
+- Organize code and assets in a structured manner.
+  Use meaningful variable and function names for clarity.
+- This documentation provides an overview of the Table Components library, its purpose, usage, and key components. Further details and customization can be implemented based on your project's requirements.
+- Remember to adapt and expand this documentation based on your needs and provide further explanations, code examples, and additional usage details.

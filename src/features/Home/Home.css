@@ -40,7 +40,7 @@
 .table-wrapper table td {
   padding: 16px;
   color: #000;
-  font-family: 'Avenir LT Std';
+  font-family: "Avenir LT Std";
   font-size: 20px;
   font-style: normal;
   font-weight: 350;
@@ -48,12 +48,14 @@
   letter-spacing: 0.02px;
 }
 
-.table-wrapper table tr, td {
-  border-bottom: solid 1px #F7F7F7;
+.table-wrapper table tr,
+td {
+  border-bottom: solid 1px #f7f7f7;
 }
 
-.table-wrapper table thead, th{
-  background-color: #F7F7F7;
+.table-wrapper table thead,
+th {
+  background-color: #f7f7f7;
   text-transform: capitalize;
   padding: 16px;
   color: #000;
@@ -68,7 +70,7 @@
 .table-wrapper table thead th:first-child {
   border-top-left-radius: 16px;
 }
-  
+
 .table-wrapper table thead th:last-child {
   border-top-right-radius: 16px;
 }
@@ -80,7 +82,7 @@
 }
 
 .table-wrapper table thead div.desc::after {
-  background-image: url('assets/icons/sortingdown.svg');
+  background-image: url("assets/icons/sortingdown.svg");
   display: inline-block;
   margin-left: 1em;
 }

@@ -4,7 +4,7 @@
 }
 
 .single-select:checked + span {
-  border: 5px solid #5C50BB;
+  border: 5px solid #5c50bb;
 }
 
 .single-select:checked + span:after {
@@ -25,7 +25,7 @@
 
 /* for inner filled circle */
 .custom-radio::after {
-  content: '';
+  content: "";
   width: 32px;
   height: 32px;
   background: transparent;
@@ -39,5 +39,5 @@
 }
 
 .active {
-  background-color: #EFEDFD;
+  background-color: #efedfd;
 }

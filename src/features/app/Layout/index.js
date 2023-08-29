@@ -1,9 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import './Layout.css';
+import "./Layout.css";
 
-
-const Layout=({ children })=>{
+const Layout = ({ children }) => {
   const [showNavbar, setShowNavbar] = React.useState(false);
 
   const handleShowNavbar = () => {
@@ -49,7 +48,7 @@ const Layout=({ children })=>{
     </svg>
   );
 
-  return(
+  return (
     <div>
       <nav className="navbar">
         <div className="menu-container">
@@ -65,11 +64,9 @@ const Layout=({ children })=>{
           </div>
         </div>
       </nav>
-      <div className="body-container">
-        { children }
-      </div>
+      <div className="body-container">{children}</div>
     </div>
   );
-}
+};
 
 export default Layout;

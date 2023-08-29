@@ -1,4 +1,3 @@
-
 .check-box-td {
   display: flex;
   justify-content: center;
@@ -20,7 +19,7 @@ input[type="checkbox"] {
 
 input[type="checkbox"]::before {
   position: absolute;
-  content: '';
+  content: "";
   display: block;
   top: 3px;
   left: 9px;
@@ -35,8 +34,8 @@ input[type="checkbox"]::before {
 
 input[type="checkbox"]:checked {
   color: #fff;
-  border-color: #5C50BB;
-  background: #5C50BB;
+  border-color: #5c50bb;
+  background: #5c50bb;
   &::before {
     opacity: 1;
   }
